@@ -12,6 +12,7 @@ declare namespace create {
             get(name: string, n: number, callback: (err: Error, data: any) => void): void;
             log(name: string, callback: (err: Error, data: any) => void): void;
             log(name: string, n: number,  callback: (err: Error, data: any) => void): void;
+            log(name: string, n: number, options: { start?: number, type?: 'text' | 'html', meta?: boolean }, callback: (err: Error, data: any) => void): void;
             log(name: string, n: number, start: number, callback: (err: Error, data: any) => void): void;
             log(name: string, n: number, start: number, type: 'text' | 'html', callback: (err: Error, data: any) => void): void;
             log(name: string, n: number, start: number, type: 'text' | 'html', meta: boolean, callback: (err: Error, data: any) => void): void;
@@ -71,6 +72,7 @@ declare namespace create {
         build: {
             get(name: string, n: number): Promise<any>;
             log(name: string, n: number, start?: number, type?: 'text' | 'html', meta?: boolean): Promise<any>;
+            log(name: string, n: number, options?: { start?: number, type?: 'text' | 'html', meta?: boolean }): Promise<any>;
             logStream(name: string, n: number, type?: 'text' | 'html', delay?: number): Promise<any>;
             stop(name: string, n: number): Promise<void>;
             term(name: string, n: number): Promise<void>;
